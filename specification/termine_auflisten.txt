@@ -1,0 +1,20 @@
+*** Settings ***
+
+Library  de.itagile.restlendar.spec.Kalender
+
+
+*** Test Cases ***
+
+Ohne Termine
+  Gegeben ich habe einen neuen Kalender,
+  dann enthält er 0 Termine.
+
+
+*** Keywords ***
+
+Gegeben ich habe einen neuen Kalender,
+  No Operation
+
+dann enthält er 0 Termine.
+  ${termine} =  hole Termine
+  Should Be Empty  ${termine}

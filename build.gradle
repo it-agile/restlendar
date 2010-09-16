@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+defaultTasks 'clean', 'spec'
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+    spec
+}
+
+dependencies {
+	spec group: 'org.robotframework', name: 'robotframework', version: '2.5.3'
+    spec files(sourceSets.main.classesDir) {
+        builtBy 'compileJava'
+    }
+}
+
+task spec(dependsOn: configurations.spec) << {
+    ant.java(
+        classname: 'org.robotframework.RobotFramework'
+    ) {
+        arg(value: 'specification')
+        classpath {
+            pathElement(path: configurations.spec.asPath)
+        }
+    }
+}
+
