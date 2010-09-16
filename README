@@ -1,0 +1,21 @@
+
+# Ideen für Testfälle
+
+Lege Termin von 9 bis 12 an
+Füge Kent zum Termin hinzu
+Benenne Termin "Pair-Programming"
+
+Termin … Feierabend
+
+Termin … um 12:00
+
+Wenn ich den Kalender an die Adresse x@y.z versende,
+Dann bekomme ich eine Email mit folgendem Inhalt:
+    …
+
+Wenn ich den Kalender nach allen Terminen frage,
+Dann kriege ich die Termine in der Reihenfolge
+    9 bis 12 …
+    12 bis 13 …
+    um 15 …
+

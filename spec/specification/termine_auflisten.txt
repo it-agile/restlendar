@@ -1,6 +1,11 @@
+*** Variables ***
+
+${basisUrl}  http://localhost:9000
+
+
 *** Settings ***
 
-Library  de.itagile.restlendar.spec.Kalender
+Library  de.itagile.restlendar.spec.Kalender  ${basisUrl}
 
 
 *** Test Cases ***

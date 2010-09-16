@@ -1,0 +1,2 @@
+GET /kalender Kalender.alleTermine(format:'txt')
+

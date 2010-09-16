@@ -7,10 +7,11 @@ repositories {
 }
 
 configurations {
-    spec
+    spec.extendsFrom runtime
 }
 
 dependencies {
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
 	spec group: 'org.robotframework', name: 'robotframework', version: '2.5.3'
     spec files(sourceSets.main.classesDir)
 }
