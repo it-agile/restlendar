@@ -12,12 +12,10 @@ configurations {
 
 dependencies {
 	spec group: 'org.robotframework', name: 'robotframework', version: '2.5.3'
-    spec files(sourceSets.main.classesDir) {
-        builtBy 'compileJava'
-    }
+    spec files(sourceSets.main.classesDir)
 }
 
-task spec(dependsOn: configurations.spec) << {
+task spec(dependsOn: compileJava) << {
     ant.java(
         classname: 'org.robotframework.RobotFramework'
     ) {
