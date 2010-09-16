@@ -34,3 +34,4 @@ def runRobotSpecifications(specDir) {
 
 apply plugin: 'eclipse'
 eclipse.dependsOn cleanEclipse
+eclipseProject.projectName = 'restlendar.spec'
