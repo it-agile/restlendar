@@ -1,11 +1,12 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Kalender {
 	
-	List<Termin> termine = new ArrayList<Termin>();
+	private List<Termin> termine = new ArrayList<Termin>();
 	private Teilnehmer teilnehmer;
 
 	public void trageEin(Termin termin) {
@@ -21,4 +22,8 @@ public class Kalender {
 	public void setBesitzer(Teilnehmer teilnehmer) {
 		this.teilnehmer = teilnehmer;
 	}
+
+    public List<Termin> termine() {
+        return Collections.unmodifiableList(termine);
+    }
 }
