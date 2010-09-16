@@ -17,7 +17,7 @@ dependencies {
 }
 
 task spec(dependsOn: compileJava) << {
-    runRobotSpecifications 'specification'
+    runRobotSpecifications "$projectDir/specification"
 }
 
 def runRobotSpecifications(specDir) {
