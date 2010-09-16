@@ -1,6 +1,10 @@
 .classpath
 .project
 .settings/
+eclipse/
+
+.gradle/
+build/
 
 logs/
 tmp/

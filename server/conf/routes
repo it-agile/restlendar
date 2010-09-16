@@ -1,2 +1,2 @@
 GET /kalender Kalender.alleTermine(format:'txt')
-
+POST /kalender/termin Kalender.fuegeTerminHinzu()

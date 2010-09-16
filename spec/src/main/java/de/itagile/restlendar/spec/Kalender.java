@@ -6,11 +6,13 @@ import java.util.List;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
 
 public class Kalender {
 
     private String basisUrl;
     private String kalenderRessource = "kalender";
+    private String terminRessource = "termin";
 
     public Kalender(String basisUrl) {
         this.basisUrl = basisUrl;
@@ -40,5 +42,16 @@ public class Kalender {
 
     private List<String> einzeltermineAus(String response) {
         return new ArrayList<String>(Arrays.asList(response.split("\\n")));
+    }
+    
+    public void fuegeTerminHinzu() throws Exception {
+        HttpClient httpClient = new HttpClient();
+        PostMethod postMethod = new PostMethod(String.format("%s/%s/%s", basisUrl, kalenderRessource, terminRessource));
+        
+        try {
+            httpClient.executeMethod(postMethod);
+        } finally {
+            postMethod.releaseConnection();
+        }
     }
 }

@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+defaultTasks 'clean', 'build'
+
+sourceSets {
+    test {
+        java {
+            srcDir 'test'
+        }
+    }
+}
+
+compileJava.source = fileTree(dir: 'app').matching { include 'models/**' }
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile group: 'junit', name: 'junit', version: '4.7'
+}
+

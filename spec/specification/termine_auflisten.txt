@@ -14,6 +14,10 @@ Ohne Termine
   Gegeben ich habe einen neuen Kalender,
   dann enthält er 0 Termine.
 
+Mit einem Termin
+  Wenn ich einen Kalender mit einem Termin habe,
+  dann enthält er einen Termin.
+  
 
 *** Keywords ***
 
@@ -23,3 +27,18 @@ Gegeben ich habe einen neuen Kalender,
 dann enthält er 0 Termine.
   ${termine} =  hole Termine
   Should Be Empty  ${termine}
+
+Wenn ich einen Kalender mit einem Termin habe,
+  Gegeben ich habe einen neuen Kalender,
+  und ich füge einen Termin hinzu.
+
+dann enthält er einen Termin.
+  ${termine} =  hole Termine
+  Should Be Equal  ${termine}.length  1
+
+und ich füge einen Termin hinzu.
+  RunKeyword  füge einen Termin hinzu
+  
+füge einen Termin hinzu
+  fuege Termin hinzu
+  
