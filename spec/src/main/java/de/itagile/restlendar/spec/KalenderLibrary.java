@@ -8,13 +8,13 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 
-public class Kalender {
+public class KalenderLibrary {
 
     private String basisUrl;
     private String kalenderRessource = "kalender";
     private String terminRessource = "termin";
 
-    public Kalender(String basisUrl) {
+    public KalenderLibrary(String basisUrl) {
         this.basisUrl = basisUrl;
     }
     

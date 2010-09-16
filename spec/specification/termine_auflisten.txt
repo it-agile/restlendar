@@ -5,7 +5,7 @@ ${basisUrl}  http://localhost:9000
 
 *** Settings ***
 
-Library  de.itagile.restlendar.spec.Kalender  ${basisUrl}
+Library  de.itagile.restlendar.spec.KalenderLibrary  ${basisUrl}
 
 
 *** Test Cases ***
