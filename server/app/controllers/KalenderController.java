@@ -18,4 +18,8 @@ public class KalenderController extends Controller {
     public static void fuegeTerminHinzu() {
         kalender.trageEin(new Termin());
     }
+    
+    public static void entleeren() {
+    	kalender = new Kalender();
+    }
 }

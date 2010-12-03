@@ -54,4 +54,15 @@ public class KalenderLibrary {
             postMethod.releaseConnection();
         }
     }
+    
+    public void entleereKalender() throws Exception {
+        HttpClient httpClient = new HttpClient();
+        PostMethod postMethod = new PostMethod(String.format("%s/%s/%s", basisUrl, kalenderRessource, "entleeren"));
+        
+        try {
+            httpClient.executeMethod(postMethod);
+        } finally {
+            postMethod.releaseConnection();
+        }
+    }
 }

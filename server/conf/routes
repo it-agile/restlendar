@@ -1,2 +1,4 @@
 GET /kalender KalenderController.alleTermine(format:'txt')
 POST /kalender/termin KalenderController.fuegeTerminHinzu()
+POST /kalender/entleeren KalenderController.entleeren()
+

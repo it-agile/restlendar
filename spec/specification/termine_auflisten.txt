@@ -7,7 +7,6 @@ ${basisUrl}  http://localhost:9000
 
 Library  de.itagile.restlendar.spec.KalenderLibrary  ${basisUrl}
 
-
 *** Test Cases ***
 
 Ohne Termine
@@ -18,11 +17,14 @@ Mit einem Termin
   Wenn ich einen Kalender mit einem Termin habe,
   dann enthält er einen Termin.
 
-
+Mit mehreren Terminen
+  Wenn ich einen Kalender mit 3 Terminen habe,
+  dann enthält er 3 Termine.
+  
 *** Keywords ***
 
 Gegeben ich habe einen neuen Kalender,
-  No Operation
+  RunKeyword  entleere Kalender
 
 dann enthält er 0 Termine.
   ${termine} =  hole Termine
@@ -32,11 +34,24 @@ dann enthält er einen Termin.
   @{termine} =  hole Termine
   Length Should Be  ${termine}  1
 
+dann enthält er 3 Termine.
+  @{termine} =  hole Termine
+  Length Should Be  ${termine}  3
+  
 Wenn ich einen Kalender mit einem Termin habe,
   Gegeben ich habe einen neuen Kalender,
   und ich füge einen Termin hinzu.
 
+Wenn ich einen Kalender mit 3 Terminen habe,
+  Gegeben ich habe einen neuen Kalender,
+  und ich füge einen Termin hinzu,
+  und ich füge einen Termin hinzu,
+  und ich füge einen Termin hinzu.
+
 und ich füge einen Termin hinzu.
+  RunKeyword  füge einen Termin hinzu
+  
+und ich füge einen Termin hinzu,
   RunKeyword  füge einen Termin hinzu
   
 füge einen Termin hinzu

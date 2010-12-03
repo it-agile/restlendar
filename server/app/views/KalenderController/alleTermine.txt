@@ -1,1 +1,3 @@
-${termine[0]}
+#{list termine, as:'termin'}
+${termin}
+#{/list}
