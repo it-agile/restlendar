@@ -12,7 +12,7 @@ configurations {
 
 dependencies {
     compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
-	spec group: 'org.robotframework', name: 'robotframework', version: '2.5.5'
+	spec group: 'org.robotframework', name: 'robotframework', version: '2.5.7'
     spec files(sourceSets.main.classesDir)
 }
 
@@ -23,12 +23,10 @@ task spec(dependsOn: compileJava) << {
 def runRobotSpecifications(specDir) {
     def specReportDirName = 'spec'
     def specReportDir = "$reportsDir/$specReportDirName"
-    ant.java(classname: 'org.robotframework.RobotFramework') {
-        arg(line: "--outputdir $specReportDir")
-        arg(value: specDir)
-        classpath {
-            pathElement(path: configurations.spec.asPath)
-        }
+    javaexec() {
+        main = 'org.robotframework.RobotFramework'
+        args "--outputdir", specReportDir, specDir
+        classpath = configurations.spec
     }
 }
 
